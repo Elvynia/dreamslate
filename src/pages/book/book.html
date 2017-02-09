@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h1>Diary</h1></ion-title>
+    <ion-icon name="refresh" (click)="refresh()"></ion-icon>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item id="loading" [hidden]="!loading" padding>
+      <ion-spinner></ion-spinner>
+      <h2 ion-text color="primary">Loading diary</h2>
+    </ion-item>
+    <ion-item [hidden]="!error">
+      <h2 ion-text color="danger">Error while fetching diary</h2>
+    </ion-item>
+    <ion-item [hidden]="dreams || loading">
+      <h2 ion-text color="primary">No dreams found in the diary</h2>
+    </ion-item>
+    <ion-item-sliding *ngFor="let dream of dreams">
+      <ion-item (click)="pushDetails(dream)">
+        <h1 ion-text color="primary">{{ dream.summary }}</h1>
+        <p>{{ dream.description }}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button icon-only (tap)="archive(dream)" (press)="delete(dream)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <button ion-button large full color="secondary">Calendar</button>
+</ion-content>

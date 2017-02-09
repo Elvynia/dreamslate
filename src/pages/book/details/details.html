@@ -1,0 +1,9 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ dream ? dream.summary : 'Loading...' }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding *ngIf="dream">
+  <h2 ion-text color="secondary">{{ dream.date }}</h2>
+  <p>{{dream.description}}</p>
+</ion-content>

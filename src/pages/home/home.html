@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Wake up & Stay lucid !
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header color="primary"><h1>New dream</h1></ion-list-header>
+    <ion-item>
+      <ion-label color="dark" floating>Summary</ion-label>
+      <ion-input [(ngModel)]="summary"></ion-input>
+    </ion-item>
+    <ion-item style="padding-bottom:10px;">
+      <ion-label color="dark" floating>Description</ion-label>
+      <ion-textarea autoresize [(ngModel)]="description"></ion-textarea>
+    </ion-item>
+    <ion-list-header color="primary"><h1>Tags</h1></ion-list-header>
+    <ion-item>
+      <ion-input placeholder="tags" [(ngModel)]="tags"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button large full round color="light" (click)="save()">Save</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

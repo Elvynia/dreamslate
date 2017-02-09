@@ -1,0 +1,28 @@
+page-book {
+  ion-navbar {
+    ion-icon {
+      position: absolute;
+      font-size: 45px;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  ion-list {
+    height: 85%;
+    ion-item#loading {
+      height: 85px;
+      ion-spinner, h2 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      ion-spinner {
+        top: 10px;
+      }
+      h2 {
+        top: 45px;
+      }
+    }
+  }
+}
